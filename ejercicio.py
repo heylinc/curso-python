@@ -1,3 +1,9 @@
+import random
+lista_aleatorio = [ ]
+lista_par = []
+lista_impar = []
+
+
 for i in range (20):
 
     lista_aleatorio.append(random.randint(0, 100))

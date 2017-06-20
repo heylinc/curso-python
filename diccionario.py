@@ -11,13 +11,13 @@ if __name__=='__main__':
 
 	args = parser.parse_args()
 
-	datos = {
+	estudiantes = {
 	'Nombre': args.Nombre,
 	'Edad': args.Edad,
 	'Clase': args.Clase,
 
 	}
 
-	for llave,valor in datos.iteritems():
+	for llave,valor in estudiantes.iteritems():
 		print llave, valor
 

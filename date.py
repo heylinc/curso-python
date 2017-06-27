@@ -59,4 +59,6 @@ if __name__ == '__main__':
         if valor['edad'] < 21:
             msj = '{0} de {1} anios, es de la ciudad de {2} y cursa {3} de la universidad'
             print msj.format(llave,valor['edad'],valor['ciudad'],valor['anio'])
-        
+            f = open('date.txt', 'a')
+            f.write(mensaje.format(llave, valor['edad'], valor['ciudad'], valor['anio']))
+            f.close()

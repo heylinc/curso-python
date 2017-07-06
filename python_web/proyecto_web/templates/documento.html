@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <p>Esto esta dentro de documentos.html</p>
+
+    {% for d in docs %}
+      <div> {{d.nombre }}</div>
+    {% endfor %}
+{% endblock %}

@@ -11,4 +11,4 @@ class Documento(models.Model):
 
 
 	def __unicode__(self):
-		return 'Documento - {0}'.format(self.id)
+		return 'Documento - {0}'.format(self.nombre)

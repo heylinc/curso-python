@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+
 		<title>Listas no ordenadas</title>
 	</head>
-	<h1>Universidad de Managua</h1>
+	<h1>{{encabezado}}</h1>
+	{% for d in docs %}
+	    <div> {{d.nombre}}</div>
+	{% endfor %}
 	<body>
-	<p>Cosas importantes</p>
+	<p>Esto esta definido en base.html </p>
 	<ul>
 				<li>administrar</li>
 				<li>Buena educacion</li>

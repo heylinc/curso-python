@@ -1,48 +1,47 @@
 import gi
-
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class MiVentana(Gtk.Window):
+class Mi_Ventana(Gtk.Window):
     def __init__(self, *args, **kwargs):
-        super(MiVentana, self).__init__(*args, **kwargs)
-        self.set_default_size(500, 300)
+        
+        super(Mi_Ventana, self).__init__(*args, **kwargs)
+        self.set_size_request(500, 300)
         self.connect('delete-event', Gtk.main_quit)
 
-    def agregar_contenedor(self):
-        self.contenedor = Gtk.Grid()
+        self.agregar_boton()
+        self.agregar_texto()
+        self.agregar_label()
+        self.agregar_salida()
+        self.contenedor()
 
-if __name__ == '__main__':
+    def Imprimir(self, btn):
+        impreso = self.texto.get_text()
+        self.label_1.set_text(impreso)
 
-    ventana = MiVentana()
-    ventana = Gtk.Window(title = 'Variados')
-    ventana.connect('delete-event', Gtk.main_quit)
-    texto = Gtk.Entry()
-    texto.get_text()
-    boton = Gtk.Button('Boton')
-    label = Gtk.Label()
-    label.set_markup('Texto a agregar')
+    def agregar_boton(self):    
+        self.btn_1 = Gtk.Button('texto escrito')
+        self.btn_1.connect('clicked', self.Imprimir)
 
-    contenedor = Gtk.Grid()
-    contenedor.set_column_homogeneous(True)
-    contenedor.set_row_homogeneous(False)
-    
-    contenedor.attach(texto, 0, 0, 3, 1)
-    contenedor.attach(boton, 1, 1, 1, 1)
-    contenedor.attach(label, 0, 4, 1, 1)
+    def agregar_texto(self):    
+        self.texto = Gtk.Entry()
 
-    ventana.add(contenedor)
-    #ventana.add(texto)
-    #ventana.add(boton)
-    #ventana.add(label)
+    def agregar_label(self):    
+        self.label_1 = Gtk.Label('Mostrar texto')
+
+    def agregar_salida(self):   
+        self.btnexit = Gtk.Button('salir')
+        self.btnexit.connect('clicked', Gtk.main_quit)
+
+    def contenedor(self):   
+        self.box = Gtk.VBox()
+        self.box.pack_start(self.texto, True, False, 0)
+        self.box.pack_start(self.btn_1, True, False, 0)
+        self.box.pack_start(self.label_1, True, False, 0)
+        self.box.pack_start(self.btnexit, True, False, 0)
+        self.add(self.box)
+
+if __name__ == '__main__':          
+    ventana = Mi_Ventana()
     ventana.show_all()
-
-    Gtk.main()
-
-	ventana = Miventana()
-
-
-	
-	ventana.show_all()
-
-	Gtk.main()
+Gtk.main()

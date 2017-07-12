@@ -25,7 +25,7 @@ class Mi_Ventana(Gtk.Window):
 		self.contenedor.attach(self.entrada, 0, 0, 2, 1)
 	def agregar_entrada2(self):
 		self.entrada2 = Gtk.Entry()
-		self.contenedor.attach(self.entrada2, 3, 0, 2, 1)
+		self.contenedor.attach(self.entrada2, 3, 0, 1, 1)
 
 	def agregar_boton(self):
 		self.boton = Gtk.Button('Agregar')

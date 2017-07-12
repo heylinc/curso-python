@@ -11,7 +11,6 @@ class Mi_Ventana(Gtk.Window):
 
 		self.agregar_contenedor()
 		self.agregar_entrada()
-		self.agregar_entrada2()
 		self.agregar_boton()
 		self.agregar_lista()
 
@@ -22,10 +21,18 @@ class Mi_Ventana(Gtk.Window):
 
 	def agregar_entrada(self):
 		self.entrada = Gtk.Entry()
+		self.entrada_monto = Gtk.Entry()
 		self.contenedor.attach(self.entrada, 0, 0, 2, 1)
-	def agregar_entrada2(self):
-		self.entrada2 = Gtk.Entry()
-		self.contenedor.attach(self.entrada2, 3, 0, 1, 1)
+		self.contenedor.attach_next_to(
+			self.entrada_monto,
+			self.entrada,
+			Gtk.PositionType.RIGHT,
+			1,
+			1
+
+		)
+		
+
 
 	def agregar_boton(self):
 		self.boton = Gtk.Button('Agregar')
@@ -69,7 +76,9 @@ class Mi_Ventana(Gtk.Window):
 
 	def agregar_fila(self, btn):
 		texto = self.entrada.get_text()
-		self.modelo.append([texto, 2.5])
+		monto = self.entrada_monto.get_text()
+		self.modelo.append([texto, float(monto)])
+	
 
 
 if __name__ == '__main__':

@@ -48,7 +48,7 @@ class Mi_Ventana(Gtk.Window):
 	def agregar_lista(self):
 
 	    self.modelo = Gtk.ListStore(str, float)
-	    self.modelo.append(['Valor1', 1.5])
+	    #self.modelo.append(['Valor1', 1.5])
 
 	    self.lista_arvhivos = Gtk.TreeView(self.modelo)
 
@@ -69,10 +69,10 @@ class Mi_Ventana(Gtk.Window):
 	    	self.lista_arvhivos,
 	    	self.boton,
 	    	Gtk.PositionType.BOTTOM,
-	    	1,
+	    	2,
 	    	1
 	    )
-	    self.modelo.append(['valor 2',2.0])
+	    #self.modelo.append(['valor 2',2.0])
 
 	def agregar_fila(self, btn):
 		texto = self.entrada.get_text()
